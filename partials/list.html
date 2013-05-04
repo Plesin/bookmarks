@@ -1,17 +1,9 @@
-<h1>{{title}}</h1>
-<table ng-controller="ListCtrl">
-	<thead>
-		<th>State</th>
-		<th>Title</th>
-		<th>Description</th>
-		<th>Link</th>
-		<th></th>
-	</thead>
-	<tr ng-repeat="item in items" class="done-{{item.done}}">
-		<td class="col1"><input type="checkbox" ng-model="item.done"></td>
-		<td class="col2">{{item.title}}</td>
-		<td class="col2">{{item.desc}}</td>
-		<td><a href="{{item.link}}" target="_blank">Link</a></td>
-		<td><div ng-click="deleteBookmark($index)" class="deleteBookmark"></div></td>
-	</tr>
-</table>
+<section id="list" ng-controller="ListCtrl">
+	<div ng-repeat="item in items" class="bookmark">
+		<h1><a href="{{item.link}}" target="_blank">{{item.title}}</a></h1>
+		<span>{{item.desc}}</span>
+		<div class="actions">
+			<div ng-click="deleteBookmark($index)" class="deleteBookmark"></div>
+			<input type="checkbox" ng-model="item.done">
+		</div>
+<section>

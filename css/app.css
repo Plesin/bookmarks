@@ -18,3 +18,6 @@ input[type="button"], input[type="submit"], input[type="text"], .nav li a {borde
     width: 16px;
     cursor: pointer;
 }
+#list h1 {font-size: 1.5em;}
+.bookmark {position: relative; border-bottom: 1px dashed #ddd; padding-bottom: 1em;}
+.actions {position: absolute; right: 0; top: 0;}
