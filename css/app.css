@@ -1,0 +1,20 @@
+/* app css stylesheet */
+html, body, #container, .row-fluid {height: 100%;}
+a {color: #333;}
+table {width: 100%;}
+#container { padding: 0; }
+section {height: 100%;}
+#sidebar, #content {margin-bottom: 0;}
+.well {border-radius: 0;}
+.nav {margin-top: 1em;}
+.nav li a {background-color: #eee; }
+.nav li a:hover, .nav li a:focus {background-color: #ccc; color: #fff;}
+input[type="button"], input[type="submit"], input[type="text"], .nav li a {border-radius: 2px;}
+.deleteBookmark {
+    background-image: url("../img/glyphicons-halflings.png");
+    background-position: -47px -95px;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="BM">
+<head>
+  <meta charset="utf-8">
+  <title>My Bookmarks app</title>
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <div id="container" class="container-fluid">
+        <div class="row-fluid">
+            <section id="sidebar" class="span3 well" ng-controller="CategoryCtrl">
+                <form ng-submit="addCategory()" class="navbar-form pull-left">
+                    <input type="text" ng-model="newCategory" placeholder="add new category" />
+                    <input class="btn" type="submit" value="add">
+                </form>
+                <div class="clearfix"></div>
+                <ul class="nav nav-pills nav-stacked">
+                    <li ng-repeat="cat in categories"><a href="#list/{{cat.id}}">{{cat.title}}</a></li>
+                </ul>
+            </section>
+            <section id="content" class="span9 well" ng-view>
+            </section>
+        </div>
+  </div>
+
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
