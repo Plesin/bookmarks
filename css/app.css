@@ -10,13 +10,18 @@ section {height: 100%;}
 .nav li a {background-color: #eee; }
 .nav li a:hover, .nav li a:focus {background-color: #ccc; color: #fff;}
 input[type="button"], input[type="submit"], input[type="text"], .nav li a {border-radius: 2px;}
-.deleteBookmark {
-    background-image: url("../img/glyphicons-halflings.png");
-    background-position: -47px -95px;
-    background-repeat: no-repeat;
-    height: 16px;
+.smallIcon {
+	height: 16px;
     width: 16px;
     cursor: pointer;
+    background-image: url("../img/glyphicons-halflings.png");
+    background-repeat: no-repeat;
+}
+.deleteBookmark {
+    background-position: -47px -95px;
+}
+.addBookmark {
+    background-position: -47px -95px;
 }
 #list h1 {font-size: 1.5em;}
 .bookmark {position: relative; border-bottom: 1px dashed #ddd; padding-bottom: 1em;}

@@ -34,7 +34,14 @@ angular.module('BM.controllers', [])
   	}
   	$scope.title = categoryId;
   	$scope.items = items[categoryId];
-  	$scope.deleteBookmark = function(index) {
+
+    $scope.deleteBookmark = function(index) {
   		$scope.items.splice(index, 1);
-  	}
+  	};
+
+    $scope.addBookmark = function() {
+      $scope.items.push({ id:'', link: $scope.link, title: $scope.link, desc: $scope.desc });
+      $scope.link = $scope.desc = '';
+    };
+
   }]);
