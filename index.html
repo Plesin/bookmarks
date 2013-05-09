@@ -8,21 +8,24 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <div id="container" class="container-fluid">
-        <div class="row-fluid">
-            <section id="sidebar" class="span3 well" ng-controller="CategoryCtrl">
-                <form ng-submit="addCategory()" class="navbar-form pull-left">
-                    <input type="text" ng-model="newCategory" placeholder="add new category" />
-                    <input class="btn" type="submit" value="add">
-                </form>
-                <div class="clearfix"></div>
-                <ul class="nav nav-pills nav-stacked">
-                    <li ng-repeat="cat in categories"><a href="#list/{{cat.id}}">{{cat.title}}</a></li>
-                </ul>
-            </section>
-            <section id="content" class="span9 well" ng-view>
-            </section>
-        </div>
+  <div id="container" class="row-fluid" ng-controller="NotesCtrl">
+        <section id="formWrap" class="well span6">
+            <form ng-submit="addNote()">
+                <input type="text" ng-model="title" placeholder="Note title" />
+                <input type="text" ng-model="content" placeholder="Note..." />
+                <input class="btn" type="submit" value="add">
+            </form>
+            <div class="clearfix"></div>
+        </section>
+        <section id="list" class="span6">
+            <div ng-repeat="note in notes" class="note">
+              <h4>{{note.title}}</h4>
+              <span>{{note.content}}</span>
+              <div class="actions">
+                <div ng-click="deleteNote($index)" class="smallIcon deleteNote"></div>
+              </div>
+            </div>
+        </section>
   </div>
 
   <script src="lib/angular/angular.min.js"></script>

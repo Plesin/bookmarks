@@ -1,28 +1,10 @@
 /* app css stylesheet */
-html, body, #container, .row-fluid {height: 100%;}
-a {color: #333;}
-table {width: 100%;}
-#container { padding: 0; }
-section {height: 100%;}
-#sidebar, #content {margin-bottom: 0;}
+#container {background-color: #F5F5F5;}
+#formWrap { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee;}
+#formWrap form {width: 95%; border: 1px solid #E3E3E3; padding: 15px; background-color: #fff;
+    box-shadow: 0 1px 4px #eee inset;
+}
+#formWrap input[type="text"] {border: none; box-shadow: none; width: 100%;}
 .well {border-radius: 0;}
-.nav {margin-top: 1em;}
-.nav li a {background-color: #eee; }
-.nav li a:hover, .nav li a:focus {background-color: #ccc; color: #fff;}
-input[type="button"], input[type="submit"], input[type="text"], .nav li a {border-radius: 2px;}
-.smallIcon {
-	height: 16px;
-    width: 16px;
-    cursor: pointer;
-    background-image: url("../img/glyphicons-halflings.png");
-    background-repeat: no-repeat;
-}
-.deleteBookmark {
-    background-position: -47px -95px;
-}
-.addBookmark {
-    background-position: -47px -95px;
-}
-#list h1 {font-size: 1.5em;}
-.bookmark {position: relative; border-bottom: 1px dashed #ddd; padding-bottom: 1em;}
-.actions {position: absolute; right: 0; top: 0;}
+.note {border: 1px solid #ddd; padding-bottom: 1em; background-color: #fff; padding: 1em; margin-top: 0.75em; box-shadow: 0 1px 5px #EEEEEE;}
+#list {margin: 0 auto; float: none;}
