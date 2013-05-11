@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="BM">
+<html lang="en" ng-app="App">
 <head>
   <meta charset="utf-8">
   <title>My Bookmarks app</title>
@@ -11,9 +11,9 @@
   <div id="container" class="row-fluid" ng-controller="NotesCtrl">
         <section id="formWrap" class="well span6">
             <form ng-submit="addNote()">
-                <input type="text" ng-model="title" placeholder="Note title" />
-                <input type="text" ng-model="content" placeholder="Note..." />
-                <input class="btn" type="submit" value="add">
+                <input type="text" ng-model="title" placeholder="Add a new note..." input-events />
+                <input class="invisible" type="text" ng-model="content" placeholder="Note..." />
+                <input class="invisible btn" type="submit" value="add">
             </form>
             <div class="clearfix"></div>
         </section>
@@ -24,6 +24,7 @@
               <div class="actions">
                 <div ng-click="deleteNote($index)" class="smallIcon deleteNote"></div>
               </div>
+              <span class="date" title="{{note.time | date:'medium'}}">{{note.time | date:'mediumDate'}}</span>
             </div>
         </section>
   </div>
