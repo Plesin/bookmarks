@@ -1,12 +1,14 @@
 /* app css stylesheet */
 .invisible {display: none !important;}
-#container {background-color: #F5F5F5;}
 #formWrap { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee;}
 #formWrap form {width: 95%; border: 1px solid #E3E3E3; padding: 15px; background-color: #fff;
     box-shadow: 0 1px 4px #eee inset;
 }
 #formWrap input[type="text"] {border: none; box-shadow: none; width: 100%;}
+#formWrap .label {cursor: pointer;}
 .well {border-radius: 0;}
 .note {position: relative; border: 1px solid #ddd; padding-bottom: 1em; background-color: #fff; padding: 1em; margin-top: 0.75em; box-shadow: 0 1px 5px #EEEEEE;}
+.note h4 {display: inline-block;}
 #list {margin: 0 auto; float: none;}
 .date {position: absolute; top:0; right: 0.5em; font-size: 0.8em; color: #999;}
+.label {margin-right: 3px;}
