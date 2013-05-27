@@ -2,7 +2,7 @@
 
 function NotesCtrl($scope, Tags, NotesData) {
     $scope.tags = Tags;
-    $scope.notes = NotesData;
+    $scope.notes = NotesData.query();
     $scope.newNoteTags = [];
     $scope.filterTags = ['angularjs'];
     $scope.selectedTag = '';
