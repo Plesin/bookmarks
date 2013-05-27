@@ -12,3 +12,8 @@
 #list {margin: 0 auto; float: none;}
 .date {position: absolute; top:0; right: 0.5em; font-size: 0.8em; color: #999;}
 .label {margin-right: 3px;}
+.actions {position: absolute; right: 0; bottom: 0;}
+.note .actions {display: none;}
+.noteHover .actions {display: block;}
+.smallIcon {height: 16px; width: 16px; cursor: pointer; background-image: url("../img/glyphicons-halflings.png"); background-repeat: no-repeat; }
+.deleteNote { background-position: -47px -95px; }

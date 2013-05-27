@@ -15,6 +15,13 @@ function NotesCtrl($scope, Tags, NotesData) {
         $scope.newNoteTags = [];
     };
 
+    $scope.deleteNote = function(index) {
+        var note = $scope.notes[index];
+        NotesData.remove({id: note._id.$oid}, function() {
+            $scope.notes.splice(index, 1);
+        });
+    };
+
     $scope.selectTag = function(id) {
         $scope.selectedTag = id;
     };

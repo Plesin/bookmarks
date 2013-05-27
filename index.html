@@ -19,7 +19,7 @@
             <div class="clearfix"></div>
         </section>
         <section id="list" class="span6">
-            <div ng-repeat="note in notes | filter:selectedTag" class="note">
+            <div ng-repeat="note in notes | filter:selectedTag" class="note" ng-class="noteClass" ng-mouseover="noteClass = 'noteHover'" ng-mouseleave="noteClass = ''">
               <h4>{{note.title}}</h4>
               <span class="label label-info" ng-repeat="tag in note.tags">{{tag}}</span>
               <div>{{note.content}}</div>
