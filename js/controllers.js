@@ -8,11 +8,15 @@ function NotesCtrl($scope, Tags, NotesData) {
     $scope.selectedTag = '';
 
     $scope.addNote = function() {
-        var id = $scope.title.toLowerCase().replace(/\s+/g, '');
-        $scope.notes.push({time: (new Date().getTime()), title: $scope.title, content: $scope.content, tags: $scope.newNoteTags});
-        $scope.title = '';
-        $scope.content = '';
-        $scope.newNoteTags = [];
+        var id = $scope.title.toLowerCase().replace(/\s+/g, ''),
+            newNote = {time: (new Date().getTime()), title: $scope.title, content: $scope.content, tags: $scope.newNoteTags};
+
+        NotesData.save(newNote, function() {
+            $scope.notes.push(newNote);
+            $scope.title = '';
+            $scope.content = '';
+            $scope.newNoteTags = [];
+        });
     };
 
     $scope.deleteNote = function(index) {
