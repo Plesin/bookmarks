@@ -8,8 +8,7 @@ angular.module('mongolab', ['ngResource']).
       );
 
       NotesData.prototype.update = function(cb) {
-        return NotesData.update({id: this._id.$oid},
-            angular.extend({}, this, {_id:undefined}), cb);
+        return NotesData.update({id: this._id.$oid}, angular.extend({}, this, {_id:undefined}), cb);
       };
 
       NotesData.prototype.destroy = function(cb) {
