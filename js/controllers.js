@@ -6,6 +6,7 @@ function NotesCtrl($scope, Tags, NotesData) {
     $scope.newNoteTags = [];
     $scope.filterTags = ['angularjs'];
     $scope.selectedTag = '';
+    $scope.orderByProperty = 'time';
 
     $scope.addNote = function() {
         var id = $scope.title.toLowerCase().replace(/\s+/g, ''),
