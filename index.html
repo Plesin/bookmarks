@@ -25,7 +25,7 @@
               <span class="label label-info" ng-repeat="tag in note.tags">{{tag}}</span>
               <div>{{note.content}}</div>
               <div class="actions">
-                <div ng-click="deleteNote($index)" class="smallIcon deleteNote"></div>
+                <div ng-click="deleteNote(note)" class="smallIcon deleteNote"></div>
               </div>
               <span class="date" title="{{note.time | date:'medium'}}">{{note.time | date:'mediumDate'}}</span>
             </div>

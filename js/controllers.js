@@ -19,8 +19,8 @@ function NotesCtrl($scope, Tags, NotesData) {
         });
     };
 
-    $scope.deleteNote = function(index) {
-        var note = $scope.notes[index];
+    $scope.deleteNote = function(note) {
+        var index = $scope.notes.indexOf(note);
         NotesData.remove({id: note._id.$oid}, function() {
             $scope.notes.splice(index, 1);
         });
