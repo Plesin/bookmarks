@@ -3,6 +3,22 @@
 // Declare app level module which depends on filters, and services
 var App = angular.module('App', ['mongolab', 'ngSanitize']);
 
+App.config(function($routeProvider) {
+
+  $routeProvider.when('/', {
+    templateUrl: 'views/list.html',
+    controller: 'NotesCtrl'
+  });
+
+  $routeProvider.when('/settings', {
+    templateUrl: 'views/settings.html',
+    controller: 'SettingsCtrl'
+  });
+
+  $routeProvider.otherwise({ redirectTo: '/' });
+
+});
+
 App.factory('Tags', function() {
     var tags = [
         {id: 'angularjs', title: "Angular JS"},

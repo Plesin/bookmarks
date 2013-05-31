@@ -1,5 +1,11 @@
 'use strict';
 
+function NavCtrl($scope, $location) {
+    $scope.isActive = function(route) {
+        return route === $location.path();
+    }
+}
+
 function NotesCtrl($scope, Tags, NotesData, $sanitize) {
     $scope.tags = Tags;
     $scope.notes = NotesData.query();
@@ -30,4 +36,9 @@ function NotesCtrl($scope, Tags, NotesData, $sanitize) {
     $scope.selectTag = function(id) {
         $scope.selectedTag = id;
     };
+
+}
+
+function SettingsCtrl($scope) {
+
 }

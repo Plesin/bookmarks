@@ -8,35 +8,16 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  <div id="container" class="row-fluid" ng-controller="NotesCtrl">
-        <section id="formWrap" class="well span6">
-            <form ng-submit="addNote()">
-                <input type="text" ng-model="title" placeholder="Add a new note..." />
-                <textarea type="text" ng-model="content" placeholder="Note..."></textarea>
-                <input class="btn" type="submit" value="add">
-            </form>
-            <span id="{{tag.id}}" class="label label-info" ng-repeat="tag in tags" ng-click="selectTag(tag.id)">{{tag.title}}</span>
-            <div class="clearfix"></div>
-        </section>
-        <section id="list" class="span6">
-            <div
-              ng-repeat="note in notes | filter:selectedTag | orderBy:orderByProperty:reverse=true"
-              class="note"
-              ng-class="noteClass"
-              ng-mouseover="noteClass = 'noteHover'"
-              ng-mouseleave="noteClass = ''"
-              >
-              <h4 edit-title>{{note.title}}</h4>
-              <input type="text" class="editInput invisible" ng-model="note.title" value="{{note.title}}"></span>
-              <span class="label label-info" ng-repeat="tag in note.tags">{{tag}}</span>
-              <div ng-bind-html="note.content | htmlContent"></div>
-              <div class="actions">
-                <div ng-click="deleteNote(note)" class="smallIcon deleteNote"></div>
-              </div>
-              <span class="date" title="{{note.time | date:'medium'}}">{{note.time | date:'mediumDate'}}</span>
-            </div>
-        </section>
+  <div class="navbar" ng-controller="NavCtrl">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li ng-class="{active:isActive('/')}"><a href="#">Home</a></li>
+        <li ng-class="{active:isActive('/settings')}"><a href="#/settings">Settings</a></li>
+      </ul>
+    </div>
   </div>
+
+  <div id="container" class="row-fluid" ng-view></div>
 
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular/angular-resource.min.js"></script>
