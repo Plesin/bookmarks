@@ -6,9 +6,13 @@
           <input class="btn" type="submit" value="add">
       </form>
       <span id="{{tag.id}}" class="label label-info" ng-repeat="tag in tags" ng-click="selectTag(tag.id)">{{tag.title}}</span>
+      <div id="layoutOptions">
+        <div id="defaultViewOption" class="layoutOption" ng-click="setListClass('span6', $event)"></div>
+        <div id="compactViewOption" class="layoutOption" ng-click="setListClass('span6 compact', $event)"></div>
+      </div>
       <div class="clearfix"></div>
   </section>
-  <section id="list" class="span6">
+  <section id="list" class="{{listClass}}">
     <div
       ng-repeat="note in notes | filter:selectedTag | orderBy:orderByProperty:reverse=true"
       class="note"

@@ -13,6 +13,7 @@ function NotesCtrl($scope, Tags, NotesData, $sanitize) {
     $scope.filterTags = ['angularjs'];
     $scope.selectedTag = '';
     $scope.orderByProperty = 'time';
+    $scope.listClass = 'span6';
 
     $scope.addNote = function() {
         var id = $scope.title.toLowerCase().replace(/\s+/g, ''),
@@ -36,6 +37,11 @@ function NotesCtrl($scope, Tags, NotesData, $sanitize) {
     $scope.selectTag = function(id) {
         $scope.selectedTag = id;
     };
+
+    $scope.setListClass = function(listClass, $event) {
+        $event.stopPropagation();
+        $scope.listClass = listClass;
+    }
 
 }
 
