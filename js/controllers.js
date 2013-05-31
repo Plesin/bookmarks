@@ -1,6 +1,6 @@
 'use strict';
 
-function NotesCtrl($scope, Tags, NotesData) {
+function NotesCtrl($scope, Tags, NotesData, $sanitize) {
     $scope.tags = Tags;
     $scope.notes = NotesData.query();
     $scope.newNoteTags = [];

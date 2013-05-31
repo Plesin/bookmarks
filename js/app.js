@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var App = angular.module('App', ['mongolab']);
+var App = angular.module('App', ['mongolab', 'ngSanitize']);
 
 App.factory('Tags', function() {
     var tags = [
@@ -39,3 +39,9 @@ App.directive('editTitle', function(NotesData){
         });
     };
 });
+
+App.filter('htmlContent', function() {
+    return function(text) {
+      return linkify(text.replace(/\n/g, '<br/>'));
+    }
+  });

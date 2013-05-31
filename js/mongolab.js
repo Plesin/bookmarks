@@ -1,3 +1,4 @@
+'use strict';
 // This is a module for cloud persistance in mongolab - https://mongolab.com
 angular.module('mongolab', ['ngResource']).
     factory('NotesData', function($resource) {
