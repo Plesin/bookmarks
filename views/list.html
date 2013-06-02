@@ -5,7 +5,6 @@
           <textarea type="text" ng-model="content" placeholder="Note..."></textarea>
           <input class="btn" type="submit" value="add">
       </form>
-      <span id="{{tag.id}}" class="label label-info" ng-repeat="tag in tags" ng-click="selectTag(tag.id)">{{tag.title}}</span>
       <div id="layoutOptions">
         <div id="defaultViewOption" class="layoutOption" ng-click="setListClass('span6', $event)"></div>
         <div id="compactViewOption" class="layoutOption" ng-click="setListClass('span6 compact', $event)"></div>
@@ -14,7 +13,7 @@
   </section>
   <section id="list" class="{{listClass}}">
     <div
-      ng-repeat="note in notes | filter:selectedTag | orderBy:orderByProperty:reverse=true"
+      ng-repeat="note in notes | orderBy:orderByProperty:reverse=true"
       class="note"
       ng-class="noteClass"
       ng-mouseover="noteClass = 'noteHover'"
@@ -22,7 +21,6 @@
       >
       <h4 edit-title>{{note.title}}</h4>
       <input type="text" class="editInput invisible" ng-model="note.title" value="{{note.title}}"></span>
-      <span class="label label-info" ng-repeat="tag in note.tags">{{tag}}</span>
       <div ng-bind-html="note.content | htmlContent"></div>
       <div class="actions">
         <div ng-click="deleteNote(note)" class="smallIcon deleteNote"></div>

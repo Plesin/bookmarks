@@ -26,14 +26,6 @@ App.factory('LoggedInUser', function() {
     }
 });
 
-App.factory('Tags', function() {
-    var tags = [
-        {id: 'angularjs', title: "Angular JS"},
-        {id: 'grunt', title: "Grunt"},
-        {id:'nodejs', title: "Node JS"}
-    ];
-    return tags;
-});
 
 App.directive('editTitle', function(NotesData){
     return function(scope, element) {
