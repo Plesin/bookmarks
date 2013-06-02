@@ -1,4 +1,27 @@
-<section id="formWrap" class="well span6">
-
-    <p>Lorem Ipsum je demonstrativní výplňový text používaný v tiskařském a knihařském průmyslu. Lorem Ipsum je považováno za standard v této oblasti už od začátku 16. století, kdy dnes neznámý tiskař vzal kusy textu a na jejich základě vytvořil speciální vzorovou knihu. Jeho odkaz nevydržel pouze pět století, on přežil i nástup elektronické sazby v podstatě beze změny. Nejvíce popularizováno bylo Lorem Ipsum v šedesátých letech 20. století, kdy byly vydávány speciální vzorníky s jeho pasážemi a později pak díky počítačovým DTP programům jako Aldus PageMaker.</p>
+<section id="settings" class="well span6">
+    <fieldset>
+        <table>
+            <tr>
+                <td><label>Name:</label></td><td><input type="text" ng-model="user.name" value="{{user.name}}"></input></td>
+            <tr>
+            <tr>
+                <td><label>User Name:</label></td><td>{{user.username}}</td>
+            <tr>
+            <tr>
+                <td><label>Email:</label></td><td><input type="text" ng-model="user.email" value="{{user.email}}"></input></td>
+            <tr>
+            <tr>
+                <td><label>Web:</label></td><td><input type="text" ng-model="user.web" value="{{user.web}}"></input></td>
+            <tr>
+            <tr class="{{buttonsRowClass}}">
+                <td></td>
+                <td>
+                    <form ng-submit="editUser()">
+                        <input class="btn" type="submit" value="Save" />&nbsp;
+                        <input class="btn" type="submit" value="Cancel" />
+                    </form>
+                </td>
+            <tr>
+        </table>
+    </fieldset>
 </section>

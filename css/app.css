@@ -4,7 +4,7 @@ body {background-image:url('../img/wavegrid.png'); background-repeat: repeat; }
 .invisible {display: none !important;}
 .inlineBlock {display: inline-block;}
 input[type="text"], textarea {border: none; box-shadow: none; width: 100%;}
-#formWrap { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee; position: relative;}
+#formWrap, #settings { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee; position: relative;}
 #formWrap form {width: 95%; border: 1px solid #E3E3E3; padding: 15px; background-color: #fff;
     box-shadow: 0 1px 4px #ddd inset;
 }
@@ -28,3 +28,4 @@ input[type="text"].editInput, textarea.editInput {display: inline-block; backgro
 background-color: #f1f1f1; box-shadow: 0 1px 3px #ddd; border: 1px solid #ddd; cursor: pointer;}
 #defaultViewOption {background-position: -333px -46px;}
 #compactViewOption {background-position: -333px -159px;}
+#settings table {width: 95%;}

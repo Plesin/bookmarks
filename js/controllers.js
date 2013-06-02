@@ -45,6 +45,30 @@ function NotesCtrl($scope, Tags, NotesData, $sanitize) {
 
 }
 
-function SettingsCtrl($scope) {
+function SettingsCtrl($scope, user, Users) {
+    $scope.user = user;
+    $scope.buttonsRowClass = 'invisible';
 
+    var showButtons = function(newValue, oldValue) {
+        if (JSON.stringify(newValue) !== JSON.stringify(oldValue)) {
+            $scope.buttonsRowClass = '';
+        }
+    };
+
+    $scope.$watch('user', showButtons, true);
+
+}
+
+//http://stackoverflow.com/questions/11972026/delaying-angularjs-route-change-until-model-loaded-to-prevent-flicker/11972028#11972028
+SettingsCtrl.resolve = {
+  user: function(Users, LoggedInUser, $q) {
+    var userId = LoggedInUser.userId;
+    var deferred = $q.defer();
+    Users.query({id: userId}, function(successData) {
+            deferred.resolve(successData);
+    }, function(errorData) {
+            deferred.reject();
+    });
+    return deferred.promise;
+  }
 }

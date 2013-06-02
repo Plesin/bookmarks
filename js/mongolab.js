@@ -17,4 +17,14 @@ angular.module('mongolab', ['ngResource']).
       };
 
       return NotesData;
+    }).
+    factory('Users', function($resource) {
+      var Users = $resource('https://api.mongolab.com/api/1/databases/bm/collections/users/:id',
+          { apiKey: 'WOqyxlY6NZQQUKrXwuWDm5juCm5Sognv' }, {
+            query:  {method:'GET', isArray:false },
+          }
+      );
+
+      return Users;
     });
+

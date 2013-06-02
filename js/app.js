@@ -12,11 +12,18 @@ App.config(function($routeProvider) {
 
   $routeProvider.when('/settings', {
     templateUrl: 'views/settings.html',
-    controller: 'SettingsCtrl'
+    controller: 'SettingsCtrl',
+    resolve: SettingsCtrl.resolve
   });
 
   $routeProvider.otherwise({ redirectTo: '/' });
 
+});
+
+App.factory('LoggedInUser', function() {
+    return {
+        userId: "51ab910ee4b0fe3ebf54fe0b"
+    }
 });
 
 App.factory('Tags', function() {
