@@ -1,8 +1,7 @@
 <div ng-controller="NotesCtrl">
   <section id="formWrap" class="well span6">
       <form ng-submit="addNote()">
-          <input type="text" ng-model="title" placeholder="Add a new note..." />
-          <textarea type="text" ng-model="content" placeholder="Note..."></textarea>
+          <textarea type="text" ng-model="content" placeholder="Add a new note..."></textarea>
           <input class="btn" type="submit" value="add">
       </form>
       <div id="layoutOptions">
@@ -19,9 +18,8 @@
       ng-mouseover="noteClass = 'noteHover'"
       ng-mouseleave="noteClass = ''"
       >
-      <h4 edit-title>{{note.title}}</h4>
-      <input type="text" class="editInput invisible" ng-model="note.title" value="{{note.title}}"></span>
-      <div ng-bind-html="note.content | htmlContent"></div>
+      <div ng-bind-html="note.content | htmlContent" edit-note></div>
+      <textarea type="text" class="editNote invisible" ng-model="note.content" value="{{note.content}}"></textarea>
       <div class="actions">
         <div ng-click="deleteNote(note)" class="smallIcon deleteNote"></div>
       </div>

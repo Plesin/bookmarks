@@ -27,7 +27,7 @@ App.factory('LoggedInUser', function() {
 });
 
 
-App.directive('editTitle', function(NotesData){
+App.directive('editNote', function(NotesData){
     return function(scope, element) {
         var input = element.next(), originalText;
 
@@ -46,7 +46,7 @@ App.directive('editTitle', function(NotesData){
                 element.removeClass('invisible');
             };
 
-            if (originalText.trim() !== note.title.trim()) {
+            if (originalText.trim() !== note.content.trim()) {
                 NotesData.update({ id: note._id.$oid}, angular.extend({}, note, {_id:undefined}), hideInput);
             } else {
                 hideInput();

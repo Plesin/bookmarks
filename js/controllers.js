@@ -12,12 +12,10 @@ function NotesCtrl($scope, NotesData, $sanitize) {
     $scope.listClass = 'span6';
 
     $scope.addNote = function() {
-        var id = $scope.title.toLowerCase().replace(/\s+/g, ''),
-            newNote = {time: (new Date().getTime()), title: $scope.title, content: $scope.content, tags: []};
+        var newNote = {time: (new Date().getTime()), content: $scope.content};
 
         NotesData.save(newNote, function() {
             $scope.notes.push(newNote);
-            $scope.title = '';
             $scope.content = '';
         });
     };
