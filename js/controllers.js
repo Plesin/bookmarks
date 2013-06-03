@@ -22,7 +22,7 @@ function NotesCtrl($scope, NotesData, $sanitize) {
 
     $scope.deleteNote = function(note) {
         var index = $scope.notes.indexOf(note);
-        NotesData.remove({id: note._id.$oid}, function() {
+        note.destroy(function() {
             $scope.notes.splice(index, 1);
         });
     };

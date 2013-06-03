@@ -47,7 +47,7 @@ App.directive('editNote', function(NotesData){
             };
 
             if (originalText.trim() !== note.content.trim()) {
-                NotesData.update({ id: note._id.$oid}, angular.extend({}, note, {_id:undefined}), hideInput);
+                note.update(hideInput);
             } else {
                 hideInput();
             }
