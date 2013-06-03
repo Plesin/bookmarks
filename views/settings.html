@@ -1,27 +1,27 @@
 <section id="settings" class="well span6">
     <fieldset>
-        <table>
-            <tr>
-                <td><label>Name:</label></td><td><input type="text" ng-model="user.name" value="{{user.name}}"></input></td>
-            <tr>
-            <tr>
-                <td><label>User Name:</label></td><td>{{user.username}}</td>
-            <tr>
-            <tr>
-                <td><label>Email:</label></td><td><input type="text" ng-model="user.email" value="{{user.email}}"></input></td>
-            <tr>
-            <tr>
-                <td><label>Web:</label></td><td><input type="text" ng-model="user.web" value="{{user.web}}"></input></td>
-            <tr>
-            <tr class="{{buttonsRowClass}}">
-                <td></td>
-                <td>
-                    <form ng-submit="editUser()">
-                        <input class="btn" type="submit" value="Save" />&nbsp;
+        <form ng-submit="editUser()" name="editUserForm">
+            <table>
+                <tr>
+                    <td><label>Name:</label></td><td><input type="text" ng-model="user.name" value="{{user.name}}" required></input></td>
+                <tr>
+                <tr>
+                    <td><label>User Name:</label></td><td>{{user.username}}</td>
+                <tr>
+                <tr>
+                    <td><label>Email:</label></td><td><input type="email" ng-model="user.email" value="{{user.email}}" required></input></td>
+                <tr>
+                <tr>
+                    <td><label>Web:</label></td><td><input type="text" ng-model="user.web" value="{{user.web}}"></input></td>
+                <tr>
+                <tr class="{{buttonsRowClass}}">
+                    <td></td>
+                    <td>
+                        <input class="btn" type="submit" value="Save" ng-disabled='!editUserForm.$valid'/>&nbsp;
                         <input class="btn" type="submit" value="Cancel" />
-                    </form>
-                </td>
-            <tr>
-        </table>
+                    </td>
+                <tr>
+            </table>
+        </form>
     </fieldset>
 </section>

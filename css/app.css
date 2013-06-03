@@ -29,3 +29,4 @@ background-color: #f1f1f1; box-shadow: 0 1px 3px #ddd; border: 1px solid #ddd; c
 #defaultViewOption {background-position: -333px -46px;}
 #compactViewOption {background-position: -333px -159px;}
 #settings table {width: 95%;}
+input.ng-invalid {border: 1px solid red;}
