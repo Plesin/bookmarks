@@ -22,8 +22,13 @@ angular.module('mongolab', ['ngResource']).
       var Users = $resource('https://api.mongolab.com/api/1/databases/bm/collections/users/:id',
           { apiKey: 'WOqyxlY6NZQQUKrXwuWDm5juCm5Sognv' }, {
             query:  {method:'GET', isArray:false },
+            update: { method: 'PUT' }
           }
       );
+
+      Users.prototype.update = function(success, error) {
+        return Users.update({id: this._id.$oid}, angular.extend({}, this, {_id:undefined}), success, error);
+      };
 
       return Users;
     });

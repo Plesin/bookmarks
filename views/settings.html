@@ -1,4 +1,8 @@
 <section id="settings" class="well span6">
+    <div id="infoBox" class="{{infoBox.classes}}">
+        <button type="button" class="close" ng-click="hideInfoBox()">×</button>
+        <strong>{{infoBox.text}}</strong>
+    </div>
     <fieldset>
         <form ng-submit="editUser()" name="editUserForm">
             <table>
@@ -17,7 +21,7 @@
                 <tr class="{{buttonsRowClass}}">
                     <td></td>
                     <td>
-                        <input class="btn" type="submit" value="Save" ng-disabled='!editUserForm.$valid'/>&nbsp;
+                        <input class="btn" type="submit" value="Save" ng-click="saveUser()" ng-disabled='!editUserForm.$valid'/>&nbsp;
                         <input class="btn" type="submit" value="Cancel" />
                     </td>
                 <tr>
