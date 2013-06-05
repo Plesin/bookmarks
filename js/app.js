@@ -31,11 +31,15 @@ App.directive('editNote', function(NotesData){
     return function(scope, element) {
         var input = element.next(), originalText;
 
-        element.unbind('click').bind('click', function() {
-            element.addClass('invisible');
-            input.removeClass('invisible');
-            input[0].focus();
-            originalText = input[0].value;
+        element.unbind('click').bind('click', function(event) {
+            var target = angular.element(event.target);
+            //only trigger the editing when not clicked on a link
+            if (target[0].tagName.toLowerCase() !== 'a') {
+                element.addClass('invisible');
+                input.removeClass('invisible');
+                input[0].focus();
+                originalText = input[0].value;
+            }
         });
 
         input.unbind('blur').bind('blur', function() {
