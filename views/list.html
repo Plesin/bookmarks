@@ -2,7 +2,7 @@
   <section id="formWrap" class="well span6">
       <form ng-submit="addNote()">
           <textarea type="text" ng-model="content" placeholder="Add a new note..."></textarea>
-          <input class="btn" type="submit" value="add">
+          <input class="btn" type="submit" value="add" ng-disabled="!content">
       </form>
       <div id="layoutOptions">
         <div id="defaultViewOption" class="layoutOption" ng-click="setListClass('span6', $event)"></div>
