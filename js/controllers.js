@@ -3,7 +3,7 @@
 function NavCtrl($scope, $location) {
     $scope.isActive = function(route) {
         return route === $location.path();
-    }
+    };
 }
 
 function NotesCtrl($scope, NotesData, $sanitize) {
@@ -30,7 +30,7 @@ function NotesCtrl($scope, NotesData, $sanitize) {
     $scope.setListClass = function(listClass, $event) {
         $event.stopPropagation();
         $scope.listClass = listClass;
-    }
+    };
 
 }
 
@@ -39,7 +39,7 @@ function SettingsCtrl($scope, user, Users) {
     $scope.buttonsRowClass = 'invisible';
     $scope.infoBox = {
         classes: 'invisible',
-        text: '',
+        text: ''
     };
 
     var showButtons = function(newValue, oldValue) {
@@ -59,7 +59,7 @@ function SettingsCtrl($scope, user, Users) {
             },
             function() {
                 $scope.infoBox.classes = "alert alert-error";
-                $scope.infoBox.text = "There has been an error. Please try again."
+                $scope.infoBox.text = "There has been an error. Please try again.";
             }
         );
     };
@@ -83,4 +83,4 @@ SettingsCtrl.resolve = {
     });
     return deferred.promise;
   }
-}
+};

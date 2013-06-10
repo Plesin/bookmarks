@@ -23,11 +23,11 @@ App.config(function($routeProvider) {
 App.factory('LoggedInUser', function() {
     return {
         userId: "51ab910ee4b0fe3ebf54fe0b"
-    }
+    };
 });
 
 
-App.directive('editNote', function(NotesData){
+App.directive('editNote', function(){
     return function(scope, element) {
         var input = element.next(), originalText;
 
@@ -62,5 +62,5 @@ App.directive('editNote', function(NotesData){
 App.filter('htmlContent', function() {
     return function(text) {
       return linkify(text.replace(/\n/g, '<br/>'));
-    }
+    };
   });
