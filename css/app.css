@@ -3,18 +3,17 @@ body {background-image:url('../img/wavegrid.png'); background-repeat: repeat; }
 .navbar-inner {border-radius: 0;}
 .invisible {display: none !important;}
 .inlineBlock {display: inline-block;}
-input[type="text"], textarea {border: none; box-shadow: none; width: 100%;}
-#formWrap, #settings { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee; position: relative;}
-#formWrap form {width: 95%; border: 1px solid #E3E3E3; padding: 15px; background-color: #fff;
-    box-shadow: 0 1px 4px #ddd inset;
-}
+input[type="text"] {border: none; box-shadow: none; width: 100%;}
+textarea {border: none; box-shadow: none; width: 97%;}
+#settings { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee; position: relative;}
 #formWrap .label {cursor: pointer;}
+#formWrap form {margin: 0;}
 .well {border-radius: 0;}
 .note {position: relative; border: 1px solid #ddd; padding-bottom: 1em; background-color: #fff; padding: 1em; margin-top: 0.75em; box-shadow: 0 1px 5px #ddd;}
 .compact .note {font-size: 0.85em; padding: 0 0.5em;}
 .note h4 {display: inline-block;}
 .compact .note h4 {font-size: 1em; display: inline;}
-#list {margin: 0 auto; float: none;}
+#formWrap, #list {margin: 0 auto; float: none;}
 .date {position: absolute; top:0; right: 0.5em; font-size: 0.8em; color: #999;}
 .label {margin-right: 3px;}
 .actions {position: absolute; right: 0; bottom: 0;}

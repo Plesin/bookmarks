@@ -1,5 +1,5 @@
 <div ng-controller="NotesCtrl">
-  <section id="formWrap" class="well span6">
+  <section id="formWrap" class="note span6">
       <form ng-submit="addNote()">
           <textarea type="text" ng-model="content" placeholder="Add a new note..."></textarea>
           <input class="btn" type="submit" value="add" ng-disabled="!content">
