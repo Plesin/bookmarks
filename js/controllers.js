@@ -6,10 +6,12 @@ function NavCtrl($scope, $location) {
     };
 }
 
-function NotesCtrl($scope, NotesData, $sanitize) {
+function NotesCtrl($scope, NotesData, Categories, $routeParams, $sanitize) {
+    $scope.categories = Categories.query();
     $scope.notes = NotesData.query();
     $scope.orderByProperty = 'time';
-    $scope.listClass = 'span6';
+    $scope.listClass = '';
+    $scope.selectedCategory = '';
 
     $scope.addNote = function() {
         var newNote = {time: (new Date().getTime()), content: $scope.content};
@@ -30,6 +32,10 @@ function NotesCtrl($scope, NotesData, $sanitize) {
     $scope.setListClass = function(listClass, $event) {
         $event.stopPropagation();
         $scope.listClass = listClass;
+    };
+
+    $scope.setSelectedCategory = function(category) {
+        $scope.selectedCategory = category;
     };
 
 }

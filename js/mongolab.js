@@ -31,5 +31,13 @@ angular.module('mongolab', ['ngResource']).
       };
 
       return Users;
+    }).
+    factory('Categories', function($resource) {
+      var Categories = $resource('https://api.mongolab.com/api/1/databases/bm/collections/categories/:id',
+          { apiKey: 'WOqyxlY6NZQQUKrXwuWDm5juCm5Sognv' }, {
+            update: { method: 'PUT' }
+          }
+      );
+      return Categories;
     });
 

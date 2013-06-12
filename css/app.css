@@ -3,6 +3,9 @@ body {background-image:url('../img/wavegrid.png'); background-repeat: repeat; }
 .navbar-inner {border-radius: 0;}
 .invisible {display: none !important;}
 .inlineBlock {display: inline-block;}
+#categories ul {list-style: none;}
+#categories ul li {padding: 0.5em; margin-bottom: 0.5em; background-color: #fff; box-shadow: 0 1px 5px #ddd;}
+#categories li:hover, #categories li:focus {background-color: #f5f5f5;}
 input[type="text"] {border: none; box-shadow: none; width: 100%;}
 textarea {border: none; box-shadow: none; width: 97%;}
 #settings { margin: 0 auto; float: none; background-color: #f1f1f1; box-shadow: 0 1px 5px #eee; position: relative;}
@@ -22,9 +25,9 @@ textarea {border: none; box-shadow: none; width: 97%;}
 .smallIcon {height: 16px; width: 16px; cursor: pointer; background-image: url("../img/glyphicons-halflings.png"); background-repeat: no-repeat; }
 .deleteNote { background-position: -47px -95px; }
 input[type="text"].editInput, textarea.editInput {display: inline-block; background-color: #f5f5f5; width: auto;}
-#layoutOptions {position: absolute; top: -6px; right: -25px;}
+#layoutOptions {float: right;}
 .layoutOption {width: 20px; height: 20px; margin-top: 5px; background-image: url("../img/glyphicons-halflings.png"); background-repeat: no-repeat;
-background-color: #f1f1f1; box-shadow: 0 1px 3px #ddd; border: 1px solid #ddd; cursor: pointer;}
+background-color: #f1f1f1; box-shadow: 0 1px 3px #ddd; border: 1px solid #ddd; cursor: pointer; display: inline-block; float: left; margin-left: 10px;}
 #defaultViewOption {background-position: -333px -46px;}
 #compactViewOption {background-position: -333px -159px;}
 #settings table {width: 95%;}

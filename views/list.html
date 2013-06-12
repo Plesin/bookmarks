@@ -1,29 +1,36 @@
 <div ng-controller="NotesCtrl">
-  <section id="formWrap" class="note span6">
-      <form ng-submit="addNote()">
-          <textarea type="text" ng-model="content" placeholder="Add a new note..."></textarea>
-          <input class="btn" type="submit" value="add" ng-disabled="!content">
-      </form>
-      <div id="layoutOptions">
-        <div id="defaultViewOption" class="layoutOption" ng-click="setListClass('span6', $event)"></div>
-        <div id="compactViewOption" class="layoutOption" ng-click="setListClass('span6 compact', $event)"></div>
-      </div>
-      <div class="clearfix"></div>
+  <section id="categories" class="span3">
+    <ul>
+      <li ng-repeat="cat in categories" ng-click="setSelectedCategory(cat.id)">{{cat.title}}</li>
+    </ul>
   </section>
-  <section id="list" class="{{listClass}}">
-    <div
-      ng-repeat="note in notes | orderBy:orderByProperty:reverse=true"
-      class="note"
-      ng-class="noteClass"
-      ng-mouseover="noteClass = 'noteHover'"
-      ng-mouseleave="noteClass = ''"
-      >
-      <div ng-bind-html="note.content | htmlContent" edit-note></div>
-      <textarea type="text" class="editNote invisible" ng-model="note.content" value="{{note.content}}"></textarea>
-      <div class="actions">
-        <div ng-click="deleteNote(note)" class="smallIcon deleteNote"></div>
+  <section id="notes" class="span9">
+    <div id="formWrap" class="note">
+        <form ng-submit="addNote()">
+            <textarea type="text" ng-model="content" placeholder="Add a new note..."></textarea>
+            <input class="btn" type="submit" value="add" ng-disabled="!content">
+            <div id="layoutOptions">
+              <div id="defaultViewOption" class="layoutOption" ng-click="setListClass('', $event)"></div>
+              <div id="compactViewOption" class="layoutOption" ng-click="setListClass('compact', $event)"></div>
+            </div>
+        </form>
+        <div class="clearfix"></div>
+    </div>
+    <div id="list" class="{{listClass}}">
+      <div
+        ng-repeat="note in notes | orderBy:orderByProperty:reverse=true | filter:{category:selectedCategory}"
+        class="note"
+        ng-class="noteClass"
+        ng-mouseover="noteClass = 'noteHover'"
+        ng-mouseleave="noteClass = ''"
+        >
+        <div ng-bind-html="note.content | htmlContent" edit-note></div>
+        <textarea type="text" class="editNote invisible" ng-model="note.content" value="{{note.content}}"></textarea>
+        <div class="actions">
+          <div ng-click="deleteNote(note)" class="smallIcon deleteNote"></div>
+        </div>
+        <span class="date" title="{{note.time | date:'medium'}}">{{note.time | date:'mediumDate'}}</span>
       </div>
-      <span class="date" title="{{note.time | date:'medium'}}">{{note.time | date:'mediumDate'}}</span>
     </div>
   </section>
 </div>
